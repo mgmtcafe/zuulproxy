@@ -1,22 +1,18 @@
 var app = angular.module('app', ['ngRoute','ngResource']);
 app.config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider){
-//	$locationProvider.html5Mode(true);
-//	$routeProvider
-//    	.when('/admin',{
-//    		templateUrl: 'index.html',
-//            controller: 'adminController'
-//    	})
-//        .when('/list_vendor',{
-//            templateUrl: '/views/list_vendor.html',
-//            controller: 'listVendorController'
-//        })
-//        .when('/create_vendor',{
-//            templateUrl: '/views/create_vendor.html',
-//            controller: 'createController'
-//        })
-//        .otherwise(
-//            { redirectTo: '/'}
-//        );
+	$locationProvider.html5Mode(true);
+	$routeProvider
+    	.when('/admin',{
+    		templateUrl: '/views/admin.html',
+            controller: 'adminController'
+    	})
+        .when('/create_vendor',{
+            templateUrl: '/views/create_vendor.html',
+            controller: 'createController'
+        })
+        .otherwise(
+            { redirectTo: '/'}
+        );
 }]);
 
 app.controller('loginController',loginCtrl);
