@@ -44,10 +44,10 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
 	        data: $httpParamSerializer($scope.data)
 	    }
 	    $http(config).then(function(data){
-	    	console.log(data['access_token']);
+	    	console.log(data.data['access_token']);
 	    },
 	    function(error){
-	    	console.log(error)
+	    	console.log(error.data)
 	    }); 
 	    
 	    
