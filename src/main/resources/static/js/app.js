@@ -22,13 +22,14 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 app.controller('loginController',loginCtrl);
 
 function loginCtrl($scope, $http, $httpParamSerializer) {	
-	$scope.userLogin = function(){	
-		alert("hello");
-		$scope.data = {
-		        "grant_type":"password", 
-		        "username": "", 
-		        "password": ""
-	    };
+	$scope.data = {
+	        "grant_type":"password", 
+	        "username": "", 
+	        "password": ""
+    };
+	
+	$scope.userLogin = function(){		
+		
 		$scope.encoded = btoa("client:secret"); 
 	    var config = {
 	        method: 'POST',
@@ -39,7 +40,7 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
 	        },
 	        data: $httpParamSerializer($scope.data)
 	    }
-	    
+	    console.log(config);
 	    $http(config).then(function(data){
 	    	console.log(data);
 	    }); 
