@@ -2,7 +2,7 @@ var app = angular.module('app', ['ngRoute','ngResource']);
 app.config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider){
 	$locationProvider.html5Mode(true);
 	$routeProvider
-    	.when('/admin',{
+    	.when('/adminPage',{
     		templateUrl: '/views/admin.html',
             controller: 'adminController'
     	})
@@ -17,7 +17,7 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 
 app.controller('loginController',loginCtrl);
 
-function loginCtrl($scope, $http, $httpParamSerializer) {	
+function loginCtrl($scope, $http, $httpParamSerializer, $location) {	
 	$scope.data = {
 	        "grant_type":"password", 
 	        "username": "", 
@@ -45,6 +45,7 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
     		function(data){
     			var token = data.data['access_token'];
     			window.localStorage.setItem("access_token",token);
+    			 $location.path('/adminPage');
     		},
     		function(error){
     			$scope.result_failure=1;  
