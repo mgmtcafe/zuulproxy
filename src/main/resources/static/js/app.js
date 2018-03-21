@@ -6,9 +6,9 @@ app.controller('loginController',loginCtrl);
 function loginCtrl($scope, $http, $httpParamSerializer) {
 	console.log("hello");
 	$scope.data = {
-	        grant_type:"admin", 
+	        grant_type:"password", 
 	        username: "admin@admin.com", 
-	        password: "password", 
+	        password: "admin", 
     };
 	$scope.encoded = btoa("client:secret"); 
     var req = {
