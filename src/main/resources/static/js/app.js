@@ -22,7 +22,8 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 app.controller('loginController',loginCtrl);
 
 function loginCtrl($scope, $http, $httpParamSerializer) {	
-	$scope.userLogin = function(){		
+	$scope.userLogin = function(){	
+		alert("hello");
 		$scope.data = {
 		        "grant_type":"password", 
 		        "username": "", 
