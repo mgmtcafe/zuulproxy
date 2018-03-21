@@ -31,7 +31,7 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
 	$scope.userLogin = function(){		
 		//var token ="eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MjE2NDY4NDEsInVzZXJfbmFtZSI6ImFkbWluQGFkbWluLmNvbSIsImF1dGhvcml0aWVzIjpbIlZFTkRPUiIsIkFETUlOIl0sImp0aSI6IjA3ZDQzNjY0LWNmY2UtNDc4MC04MDg1LTVhZjgzOWExMGI0NCIsImNsaWVudF9pZCI6ImNsaWVudCIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSIsIm9wZW5pZCJdfQ.caky9X49XNdzgQYsme3g_ixUD48y4sncV3PISjmm-4vEtkN6KJe5Wm3jRDBdebI3Vt00t9WD_2jKSO5t1UIxR8EqTiygnBiGUqgaanMsf5AKfmE7_mTEoHS0OfAaMjfC4tkmWhUB47y-OJqJLH2-gOKux16QiXK9X2vT3BR6ChfRw-Ynt9QANrB92YV24K3AMdKCqNhOf0eaOVqfhs3xpJS53J-shVJ43TkwvSzsmwNlHnk3pf45NRYMZcpub6oyTm2sFTUBb8n40e12XfYEXcst_pFkt8GLVz81E6flkNYq51_bIyZitps6OAAbGlu2thx3viggB7b1lk3jgX2-tg";
 		
-		window.localStorage.setItem("access_token",token);
+		//window.localStorage.setItem("access_token",token);
 		
 		$scope.encoded = btoa("client:secret"); 
 	    var config = {
