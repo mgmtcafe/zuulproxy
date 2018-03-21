@@ -22,6 +22,7 @@ zuul:
     uaa-service:
       sensitiveHeaders:
       path: /uaa/**
+      url: http://authorizationserver.herokuapp.com/
       stripPrefix: false
   add-proxy-headers: true
 
