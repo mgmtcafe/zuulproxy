@@ -45,7 +45,7 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
 	    }
 	    $http(config).then(function(data){
 	    	console.log(data);
-	    	if(error in data) {
+	    	if(data.hasOwnProperty('error')){
 	    		console.log("error presesnt");
 	    	}
 	    	else{
