@@ -24,7 +24,7 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
     	console.log(data);
         /*$http.defaults.headers.common.Authorization = 
           'Bearer ' + data.data.access_token;*/
-    	alert(data.data.access_token);
+    	//salert(data.data.access_token);
         //$cookies.put("access_token", data.data.access_token);
         //window.location.href="index";
     }); 
