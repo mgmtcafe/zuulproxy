@@ -1,17 +1,34 @@
 var app = angular.module('app', ['ngRoute','ngResource']);
 app.config(['$routeProvider','$locationProvider',function($routeProvider, $locationProvider){
+//	$locationProvider.html5Mode(true);
+//	$routeProvider
+//    	.when('/admin',{
+//    		templateUrl: 'index.html',
+//            controller: 'adminController'
+//    	})
+//        .when('/list_vendor',{
+//            templateUrl: '/views/list_vendor.html',
+//            controller: 'listVendorController'
+//        })
+//        .when('/create_vendor',{
+//            templateUrl: '/views/create_vendor.html',
+//            controller: 'createController'
+//        })
+//        .otherwise(
+//            { redirectTo: '/'}
+//        );
 }]);
+
 app.controller('loginController',loginCtrl);
 
 function loginCtrl($scope, $http, $httpParamSerializer) {
-	console.log("hello");
 	$scope.data = {
-	        grant_type:"password", 
-	        username: "admin@admin.com", 
-	        password: "admin", 
+	        "grant_type":"password", 
+	        "username": "", 
+	        "password": ""
     };
 	$scope.encoded = btoa("client:secret"); 
-    var req = {
+    var config = {
         method: 'POST',
         url: "/uaa/oauth/token",
         headers: {
@@ -20,12 +37,8 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
         },
         data: $httpParamSerializer($scope.data)
     }
-    $http(req).then(function(data){
+    
+    $http(config).then(function(data){
     	console.log(data);
-        /*$http.defaults.headers.common.Authorization = 
-          'Bearer ' + data.data.access_token;*/
-    	//salert(data.data.access_token);
-        //$cookies.put("access_token", data.data.access_token);
-        //window.location.href="index";
     }); 
 }
