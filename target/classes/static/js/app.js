@@ -45,8 +45,8 @@ function loginCtrl($scope, $http, $httpParamSerializer) {
 	    }
 	    $http(config).then(function(data){
 	    	console.log(data);
-	    	if(data.hasOwnProperty('error')){
-	    		console.log("error presesnt");
+	    	if(error=="unauthorized"){
+	    		console.log("Error Presesnt");
 	    	}
 	    	else{
 	    		console.log(data.access_token);
