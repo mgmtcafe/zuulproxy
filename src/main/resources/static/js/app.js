@@ -21,24 +21,26 @@ app.config(['$routeProvider','$locationProvider',function($routeProvider, $locat
 
 app.controller('loginController',loginCtrl);
 
-function loginCtrl($scope, $http, $httpParamSerializer) {
-	$scope.data = {
-	        "grant_type":"password", 
-	        "username": "", 
-	        "password": ""
-    };
-	$scope.encoded = btoa("client:secret"); 
-    var config = {
-        method: 'POST',
-        url: "/uaa/oauth/token",
-        headers: {
-            "Authorization": "Basic " + $scope.encoded,
-            "Content-type": "application/x-www-form-urlencoded;"
-        },
-        data: $httpParamSerializer($scope.data)
-    }
-    
-    $http(config).then(function(data){
-    	console.log(data);
-    }); 
+function loginCtrl($scope, $http, $httpParamSerializer) {	
+	$scope.userLogin = function(){		
+		$scope.data = {
+		        "grant_type":"password", 
+		        "username": "", 
+		        "password": ""
+	    };
+		$scope.encoded = btoa("client:secret"); 
+	    var config = {
+	        method: 'POST',
+	        url: "/uaa/oauth/token",
+	        headers: {
+	            "Authorization": "Basic " + $scope.encoded,
+	            "Content-type": "application/x-www-form-urlencoded;"
+	        },
+	        data: $httpParamSerializer($scope.data)
+	    }
+	    
+	    $http(config).then(function(data){
+	    	console.log(data);
+	    }); 
+	};
 }
