@@ -38,7 +38,7 @@ import java.util.regex.Pattern;
 @Configuration
 @EnableOAuth2Sso
 @EnableResourceServer
-@Order(value = 0)
+@Order(value = -20)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String CSRF_COOKIE_NAME = "XSRF-TOKEN";
     private static final String CSRF_HEADER_NAME = "X-XSRF-TOKEN";
