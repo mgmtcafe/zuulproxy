@@ -54,14 +54,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        /*http.authorizeRequests().antMatchers("/uaa/**", "/login").permitAll().anyRequest().authenticated()
-            .and()
+        http.authorizeRequests()
+        	.antMatchers("/")
+    		.permitAll().and()
             .csrf().requireCsrfProtectionMatcher(csrfRequestMatcher()).csrfTokenRepository(csrfTokenRepository())
             .and()
             .addFilterAfter(csrfHeaderFilter(), CsrfFilter.class)
             .addFilterAfter(oAuth2AuthenticationProcessingFilter(), AbstractPreAuthenticatedProcessingFilter.class)
             .logout().permitAll()
-            .logoutSuccessUrl("/");*/
+            .logoutSuccessUrl("/");
     }
 
     private OAuth2AuthenticationProcessingFilter oAuth2AuthenticationProcessingFilter() {
