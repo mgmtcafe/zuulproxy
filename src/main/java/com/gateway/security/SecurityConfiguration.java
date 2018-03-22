@@ -32,13 +32,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-/**
- * @author Thibaud Leprêtre
- */
 @Configuration
 @EnableOAuth2Sso
 @EnableResourceServer
-@Order(value = -20)
+@Order(value = 0)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     private static final String CSRF_COOKIE_NAME = "XSRF-TOKEN";
     private static final String CSRF_HEADER_NAME = "X-XSRF-TOKEN";
